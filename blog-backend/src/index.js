@@ -3,6 +3,7 @@ import Koa from 'koa';
 import Router from 'koa-router';
 import bodyParser from 'koa-bodyparser';
 import api from './api';
+import createFakeData from 'createFakeData';
 import mongoose from 'mongoose';
 
 dotenv.config();
@@ -21,6 +22,7 @@ mongoose
   .connect(MONGO_URI)
   .then(() => {
     console.log('connected to MongoDB');
+    // createFakeData();
   })
   .catch((e) => {
     console.error(e);
