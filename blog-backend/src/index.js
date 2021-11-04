@@ -3,7 +3,8 @@ import Koa from 'koa';
 import Router from 'koa-router';
 import bodyParser from 'koa-bodyparser';
 import api from './api';
-import createFakeData from 'createFakeData';
+// import createFakeData from 'createFakeData';
+import jwtMiddleware from 'lib/jwtMiddleware';
 import mongoose from 'mongoose';
 
 dotenv.config();
@@ -14,6 +15,7 @@ const router = new Router();
 router.use('/api', api.routes());
 
 app.use(bodyParser());
+app.use(jwtMiddleware);
 app.use(router.routes()).use(router.allowedMethods());
 
 const { PORT, MONGO_URI } = process.env;
