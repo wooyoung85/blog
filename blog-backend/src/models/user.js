@@ -31,7 +31,7 @@ UserSchema.methods.generateToken = function () {
     },
     process.env.JWT_SECRET,
     {
-      expiresIn: '7d',
+      expiresIn: '3d',
     },
   );
   return token;
