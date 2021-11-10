@@ -1,13 +1,8 @@
 import React from 'react';
-import { Outlet } from 'react-router';
+import Button from 'components/common/Button';
 
 const PostListPage = () => {
-  return (
-    <>
-      <div>포스트리스트</div>
-      <Outlet />
-    </>
-  );
+  return <Button>버튼</Button>;
 };
 
 export default PostListPage;
